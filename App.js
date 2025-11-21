@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DECADES } from './constants.ts';
+import { DECADES } from './constants.js';
 import { generateTimeTravelImage } from './services/geminiService.js';
 
 function App() {
