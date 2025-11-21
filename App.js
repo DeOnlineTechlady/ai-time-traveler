@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+iimport React, { useState } from 'https://esm.sh/react@19.2.0';
 import { DECADES } from './constants.js';
 import { generateTimeTravelImage } from './services/geminiService.js';
 
