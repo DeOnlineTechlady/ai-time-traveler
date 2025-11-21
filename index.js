@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'https://esm.sh/react@19.2.0';
+import ReactDOM from 'https://esm.sh/react-dom@19.2.0/client';
 import App from './App.js';
 
-const rootEl = document.getElementById('root');
+const rootEL = document.getElementById('root');
 
-if (rootEl) {
-  const root = ReactDOM.createRoot(rootEl);
+if (rootEL) {
+  const root = ReactDOM.createRoot(rootEL);
   root.render(
     React.createElement(React.StrictMode, null, React.createElement(App))
   );
