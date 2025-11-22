@@ -1,0 +1,34 @@
+name: Deploy Vite app
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository contents
+      - uses: actions/checkout@v3
+
+      # Install Node.js to build the Vite project
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Install project dependencies defined in package.json
+      - name: Install dependencies
+        run: npm install
+
+      # Build the application into the dist directory
+      - name: Build
+        run: npm run build
+
+      # Deploy the built application to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
